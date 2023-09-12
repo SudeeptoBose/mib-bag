@@ -12,7 +12,14 @@ export default class Model{
         this.mibBag = this.mibBagPlane.scene
         this.time = this.experience.time
         this.mibTexture = this.assets.mibTexture
+        this.mibTextureBlue = this.assets.mibTextureBlue
+        this.mibTextureYellow = this.assets.mibTextureYellow
         this.mibTexture.flipY = false
+        this.mibTexture.colorSpace = THREE.SRGBColorSpace
+        this.mibTextureBlue.flipY = false
+        this.mibTextureBlue.colorSpace = THREE.SRGBColorSpace
+        this.mibTextureYellow.flipY = false
+        this.mibTextureYellow.colorSpace = THREE.SRGBColorSpace
         console.log(this.mibBag.children)
         this.setModel()
         // this.setMesh()
@@ -25,8 +32,9 @@ export default class Model{
         this.scene.add(this.mibBag)
         this.mibBag.position.z = -9
         this.mibBag.children.forEach((child)=>{
-            child.material = new THREE.MeshBasicMaterial()
-            child.material.map = this.mibTexture
+            child.material = new THREE.MeshBasicMaterial( {
+                map: this.mibTextureBlue
+            })
         })
         
     }
