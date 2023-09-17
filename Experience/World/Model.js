@@ -4,6 +4,7 @@ import Experience from '../Experience'
 export default class Model{
     constructor(){
         this.experience = new Experience()
+        this.sizes = this.experience.sizes
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.assets = this.resources.items
@@ -31,13 +32,14 @@ export default class Model{
     {
         this.scene.add(this.mibBag)
         this.mibBag.position.z = -9
-        this.mibBag.position.x = 2
+        this.mibBag.position.x = this.sizes.width * 0.0009
+        this.mibBag.position.y = -this.sizes.height * 0.0004
         this.mibBag.children.forEach((child)=>{
             child.material = new THREE.MeshBasicMaterial( {
                 map: this.mibTexture
             })
         })
-        this.mibBag.scale.set(0.75,0.75,0.75)
+        this.mibBag.scale.set(0.8,0.8,0.8)
         
     }
 
