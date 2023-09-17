@@ -25,7 +25,6 @@ export default class Experience{
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.resources = new Resources(assets)
-
         this.world = new World()
 
 

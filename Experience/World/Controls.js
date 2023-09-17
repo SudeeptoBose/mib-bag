@@ -11,14 +11,14 @@ export default class Controls{
         this.time = this.experience.time
         this.camera = this.experience.camera
         this.mibBag = this.experience.world.model.mibBag
-
+        this.renderer = this.experience.renderer
 
         GSAP.registerPlugin(ScrollTrigger)
 
-        this.setPath()
+        this.setRotationAnimation()
     }
 
-    setPath()
+    setRotationAnimation()
     {
         console.log(this.mibBag)
         this.timeline = new GSAP.timeline()
@@ -29,9 +29,23 @@ export default class Controls{
                 markers: true,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 5
+                scrub: 5,
+                invalidateOnRefresh: true
             }
         })
+
+        // GSAP.to(this.scene, {
+        //     background:(new THREE.Color(0x0ffff0)),
+        //     scrollTrigger: {
+        //         trigger: ".first-move",
+        //         markers: true,
+        //         start: "top top",
+        //         end: "bottom bottom",
+        //         scrub: 5,
+        //         invalidateOnRefresh: true
+        //     }
+        // })
+        
         this.timeline.to(this.mibBag.rotation, {
             y: 6.3,
             scrollTrigger: {
@@ -39,7 +53,8 @@ export default class Controls{
                 markers: true,
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 5
+                scrub: 5,
+                invalidateOnRefresh: true
             }
         })
     }
