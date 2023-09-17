@@ -31,11 +31,13 @@ export default class Model{
     {
         this.scene.add(this.mibBag)
         this.mibBag.position.z = -9
+        this.mibBag.position.x = 2
         this.mibBag.children.forEach((child)=>{
             child.material = new THREE.MeshBasicMaterial( {
-                map: this.mibTextureBlue
+                map: this.mibTexture
             })
         })
+        this.mibBag.scale.set(0.75,0.75,0.75)
         
     }
 
