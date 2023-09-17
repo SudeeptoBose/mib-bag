@@ -31,15 +31,16 @@ export default class Model{
     setModel()
     {
         this.scene.add(this.mibBag)
-        this.mibBag.position.z = -9
-        this.mibBag.position.x = this.sizes.width * 0.0009
+        // this.mibBag.position.z = -9
+        this.mibBag.position.x = -this.sizes.width * 0.00009
         this.mibBag.position.y = -this.sizes.height * 0.0004
         this.mibBag.children.forEach((child)=>{
             child.material = new THREE.MeshBasicMaterial( {
                 map: this.mibTexture
             })
         })
-        this.mibBag.scale.set(0.8,0.8,0.8)
+        this.mibBag.scale.set(0.90,0.90,0.90)
+        // this.mibBag.rotation.z = -0.5
         
     }
 

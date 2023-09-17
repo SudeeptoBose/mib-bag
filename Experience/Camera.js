@@ -9,7 +9,7 @@ export default class Camera{
         this.canvas = this.experience.canvas
 
         this.createPerspectiveCamera()
-        this.setOrbitControls()
+        // this.setOrbitControls()
     }
 
     createPerspectiveCamera()
@@ -17,6 +17,7 @@ export default class Camera{
         this.perspectiveCamera = new THREE.PerspectiveCamera(35, this.sizes.aspectRatio, 0.1, 1000)
         this.scene.add(this.perspectiveCamera)
         this.perspectiveCamera.position.z = 5
+        this.perspectiveCamera.position.x = -1
     }
 
     setOrbitControls()
@@ -32,7 +33,7 @@ export default class Camera{
 
     update()
     {
-        this.controls.update()
+        // this.controls.update()
         this.perspectiveCamera.updateProjectionMatrix()
     }
 }

@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import Experience from '../Experience'
 import Environment from './Environment'
 import Model from './Model'
+import Controls from './Controls'
 
 export default class World{
     constructor(){
@@ -15,6 +16,7 @@ export default class World{
         this.resources.on('ready', () =>{
             this.environment = new Environment()
             this.model = new Model()
+            this.controls = new Controls()
         })
 
     }
